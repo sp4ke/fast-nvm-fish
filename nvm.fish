@@ -66,6 +66,13 @@ function nvm-fast
 	if test (count $argv[1]) -lt 1
 		echo 'nvm-fast: at least one argument is required'
 	end
+	
+	if test (count $argv) -eq 1
+		if test $argv[1] = 'use'
+			eval $HOME/.nvm/nvm-exec use
+			return
+		end
+	end
 
 	set -l command $argv[1]
 
