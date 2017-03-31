@@ -73,7 +73,7 @@ function nvm-fast
 	
 		if test (count $argv) -eq 1
 			# use local .nvmrc
-			bash -c "source ~/.vnm/nvm.sh; nvm use"
+			bash -c "source ~/.nvm/nvm.sh; nvm use"
 			return
 		end
 	
