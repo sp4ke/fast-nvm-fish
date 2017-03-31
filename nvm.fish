@@ -70,6 +70,13 @@ function nvm-fast
 	set -l command $argv[1]
 
 	if test $command = 'use'
+	
+		if test (count $argv) -eq 1
+			# use local .nvmrc
+			bash -c "source ~/.vnm/nvm.sh; nvm use"
+			return
+		end
+	
 		set -l target_version $argv[2]
 		set -l matched_version (brigand_nvm_fish_find_matching_version $target_version)
 
